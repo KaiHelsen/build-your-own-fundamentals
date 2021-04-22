@@ -8,6 +8,10 @@ class Articles implements IController
     {
         $container = new ArticleContainer();
         $articles = $container->GetAll();
+
+        //compose basic GET structure to redirect to detail view of article
+        $detailRef = GET_PAGE . '=' . ARTICLE_DETAIL . '&' . GET_ARTICLE_SLUG . '=' ;
+
         // render header and head
         require "view/includes/Head.php";
         require "view/includes/Header.php";
